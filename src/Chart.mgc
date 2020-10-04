@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="Server.Server" x="2392" y="201">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Server.ServerLoop"/>
+        <Association
+            destinationClassName="Server.Network.ServerSocketListener"
+            endpointName="socketListener" kind="Simple"/>
+        <Association
+            destinationClassName="Server.Network.ServerGameState"
+            endpointName="gameState" kind="Simple"/>
+        <Communication destinationClassName="Server.Entities.ServerEntities"/>
+        <Communication destinationClassName="Server.Network.Connections_Server"/>
+        <Communication destinationClassName="Server.Network.Connection_Server"/>
+        <Communication destinationClassName="Server.Network.ServerGameState"/>
+        <Communication destinationClassName="Server.Network.ServerProtocol"/>
+        <Communication destinationClassName="Server.Network.ServerSocketListener"/>
+        <Communication destinationClassName="Server.ServerLoop"/>
+    </Class>
+    <Class name="Client.UI.LoadingScreen" x="31" y="916">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.UI.MultiplayerScreen"/>
+        <Communication destinationClassName="Client.Client"/>
+    </Class>
+    <Class name="Client.UI.UIManager" x="49" y="876">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Client.UI.SettingScreen"/>
+        <Communication destinationClassName="Client.UI.LoadingScreen"/>
+        <Communication destinationClassName="Client.UI.MenuScreen"/>
+        <Communication destinationClassName="Client.UI.LobbyScreen"/>
+        <Communication destinationClassName="Client.UI.MultiplayerScreen"/>
+        <Communication destinationClassName="Client.UI.HostServerScreen"/>
+        <Communication destinationClassName="Client.Entities.Entities"/>
+        <Communication destinationClassName="Client.UI.WinnerScreen"/>
+    </Class>
+    <Class name="Server.Entities.ServerEntities" x="2410" y="821">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Server.Entities.ServerObject"
+            endpointName="objects" kind="Simple"/>
+        <Association destinationClassName="Server.Entities.Map_Server"
+            endpointName="map" kind="Simple"/>
+        <Communication destinationClassName="Server.Entities.ServerObject"/>
+        <Communication destinationClassName="Server.Entities.Map_Server"/>
+        <Communication destinationClassName="Server.Network.Connections_Server"/>
+    </Class>
+    <Class name="Client.Network.ClientGameState" x="545" y="229">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Network.Connections"
+            endpointName="connections" kind="Simple"/>
+        <Communication destinationClassName="Client.Network.Connection"/>
+        <Communication destinationClassName="Client.Network.Connections"/>
+        <Communication destinationClassName="Client.Entities.Object"/>
+    </Class>
+    <Class name="Client.KeyInput" x="538" y="22">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Tools.Input"/>
+    </Class>
+    <Class name="Client.UI.MenuScreen" x="119" y="875">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Entities.Object"
+            endpointName="guys" kind="Simple"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Entities.Animation"/>
+        <Communication destinationClassName="Client.Entities.Entities"/>
+        <Communication destinationClassName="Client.Entities.Object"/>
+    </Class>
+    <Class name="Server.Network.ServerGameState" x="2178" y="357">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="Server.Network.Connections_Server"
+            endpointName="connections" kind="Simple"/>
+        <Communication destinationClassName="Server.Network.Connections_Server"/>
+        <Communication destinationClassName="Server.Network.Connection_Server"/>
+    </Class>
+    <Class name="Tools.Input" x="1604" y="536">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="Client.Client" x="844" y="237">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="Client.GameLoop"/>
+        <Association destinationClassName="Server.Server"
+            endpointName="server" kind="Simple"/>
+        <Association
+            destinationClassName="Client.Network.ClientSocketListener"
+            endpointName="socketListener" kind="Simple"/>
+        <Association destinationClassName="Client.RawData"
+            endpointName="rawData" kind="Simple"/>
+        <Association
+            destinationClassName="Client.Network.ClientGameState"
+            endpointName="gameState" kind="Simple"/>
+        <Association destinationClassName="Client.MouseInput"
+            endpointName="mouseInput" kind="Simple"/>
+        <Association destinationClassName="Client.KeyInput"
+            endpointName="keyInput" kind="Simple"/>
+        <Communication destinationClassName="Server.Server"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Network.ClientSocketListener"/>
+        <Communication destinationClassName="Client.KeyInput"/>
+        <Communication destinationClassName="Client.MouseInput"/>
+        <Communication destinationClassName="Client.GameLoop"/>
+        <Communication destinationClassName="Client.Network.Connections"/>
+        <Communication destinationClassName="Client.Network.ClientProtocol"/>
+        <Communication destinationClassName="Client.Entities.Entities"/>
+    </Class>
+    <Class name="Client.Network.Connections" x="576" y="318">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Network.Connection"
+            endpointName="connections" kind="Simple"/>
+        <Communication destinationClassName="Client.Network.Connection"/>
+    </Class>
+    <Class name="Server.Entities.ServerObject" x="2168" y="707">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Tools.Input"
+            endpointName="input" kind="Simple"/>
+        <Communication destinationClassName="Tools.Input"/>
+    </Class>
+    <Class name="Client.Network.ClientSocketListener" x="1087" y="24">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="Client.Network.Connection" x="569" y="392">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Entities.Object"
+            endpointName="player" kind="Simple"/>
+        <Communication destinationClassName="Client.Entities.Object"/>
+    </Class>
+    <Class name="Server.Network.Connection_Server" x="2168" y="513">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Server.Entities.ServerObject"
+            endpointName="player" kind="Simple"/>
+    </Class>
+    <Class name="Client.UI.MultiplayerScreen" x="199" y="876">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Client"/>
+        <Communication destinationClassName="Client.RawData"/>
+        <Communication destinationClassName="Client.Entities.Entities"/>
+    </Class>
+    <Class name="Server.Network.ServerProtocol" x="2052" y="360">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Server.Network.Connections_Server"/>
+        <Communication destinationClassName="Server.Network.Connection_Server"/>
+        <Communication destinationClassName="Server.Network.ServerGameState"/>
+        <Communication destinationClassName="Tools.Input"/>
+    </Class>
+    <Class name="Client.Network.ClientProtocol" x="903" y="320">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Network.ClientPacket"
+            endpointName="gamePacket" kind="Simple"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Network.Connection"/>
+        <Communication destinationClassName="Client.Network.ClientGameState"/>
+        <Communication destinationClassName="Client.Network.Connections"/>
+        <Communication destinationClassName="Client.RawData"/>
+        <Communication destinationClassName="Client.Entities.Entities"/>
+        <Communication destinationClassName="Client.Network.ClientPacket"/>
+        <Communication destinationClassName="Client.Entities.Object"/>
+        <Communication destinationClassName="Client.UI.WinnerScreen"/>
+    </Class>
+    <Class name="Client.Entities.Object" x="21" y="195">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Entities.Animation"
+            endpointName="animations" kind="Simple"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Entities.Animation"/>
+    </Class>
+    <Class name="Client.Entities.Camera" x="701" y="735">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Entities.Object"
+            endpointName="obj" kind="Simple"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Network.Connections"/>
+    </Class>
+    <Class name="Client.UI.SettingScreen" x="120" y="913">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Entities.Entities"/>
+    </Class>
+    <Class name="Server.Entities.Map_Server" x="2366" y="898">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="Client.Entities.Animation" x="75" y="40">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="Client.MouseInput" x="314" y="20">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Client.UI.SettingScreen"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.UI.LoadingScreen"/>
+        <Communication destinationClassName="Client.UI.MenuScreen"/>
+        <Communication destinationClassName="Client.UI.LobbyScreen"/>
+        <Communication destinationClassName="Client.UI.MultiplayerScreen"/>
+        <Communication destinationClassName="Client.UI.HostServerScreen"/>
+    </Class>
+    <Class name="Client.UI.LobbyScreen" x="414" y="877">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Entities.Object"
+            endpointName="guys" kind="Simple"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Entities.Animation"/>
+        <Communication destinationClassName="Client.Network.Connection"/>
+        <Communication destinationClassName="Client.Client"/>
+        <Communication destinationClassName="Client.Network.Connections"/>
+        <Communication destinationClassName="Client.RawData"/>
+        <Communication destinationClassName="Client.Entities.Entities"/>
+        <Communication destinationClassName="Client.Entities.Object"/>
+    </Class>
+    <Class name="Client.UI.HostServerScreen" x="307" y="877">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Client"/>
+        <Communication destinationClassName="Client.Entities.Entities"/>
+    </Class>
+    <Class name="Client.Entities.P_Score" x="963" y="1053">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="Server.Network.ServerSocketListener" x="2053" y="20">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="Client.RawData" x="1093" y="322">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Tools.Input"
+            endpointName="input" kind="Simple"/>
+    </Class>
+    <Class name="Client.Entities.ScoreBoard" x="907" y="734">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Entities.P_Score"
+            endpointName="pscore" kind="Simple"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+        <Communication destinationClassName="Client.Network.Connections"/>
+    </Class>
+    <Class name="Client.Entities.Entities" x="979" y="642">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="Client.Entities.Object"
+            endpointName="objects" kind="Simple"/>
+        <Association destinationClassName="Client.Entities.ScoreBoard"
+            endpointName="scoreBoard" kind="Simple"/>
+        <Association destinationClassName="Client.Entities.Camera"
+            endpointName="camera" kind="Simple"/>
+        <Association destinationClassName="Client.Entities.Map"
+            endpointName="map" kind="Simple"/>
+        <Communication destinationClassName="Client.Entities.Camera"/>
+        <Communication destinationClassName="Client.Entities.Map"/>
+        <Communication destinationClassName="Client.Entities.ScoreBoard"/>
+        <Communication destinationClassName="Client.Entities.Object"/>
+    </Class>
+    <Class name="Client.UI.WinnerScreen" x="497" y="877">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Client.Entities.Entities"/>
+    </Class>
+    <Class name="Client.Network.ClientPacket" x="871" y="376">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="Server.Network.Connections_Server" x="2171" y="440">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="Server.Network.Connection_Server"
+            endpointName="connections" kind="Simple"/>
+        <Communication destinationClassName="Server.Network.Connection_Server"/>
+    </Class>
+    <Class name="Client.GameLoop" x="861" y="36">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="Client.Entities.Map" x="1130" y="734">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="Client.UI.UIManager"/>
+    </Class>
+    <Class name="Server.ServerLoop" x="2438" y="29">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+</ClassDiagram>
